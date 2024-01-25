@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>crm - customers</title>
+</head>
+<body>
+    <h1> Customers Details </h1>
+    <button onclick="redirectAndAddCustomers()">Add Customer</button>
+    <button onclick="redirectAndGetAllCustomers()">Get All Customers</button>
+
+    <script>
+        function redirectAndAddCustomers() {
+            window.location.href = '/api/add-customer-frontend';
+        }
+
+        function redirectAndGetAllCustomers() {
+            window.location.href = '/api/customer-list';
+        }
+
+    </script>
+
+</body>
+</html>

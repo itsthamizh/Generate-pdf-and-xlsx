@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+</head>
+<body>
+    <h1>Add Customer</h1>
+
+    <form id="addCustomerForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br>
+    
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br>
+    
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName"><br>
+    
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address"><br>
+    
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+    
+        <button type="button" onclick="addCustomer()">Add Customer</button>
+    </form>
+    
+    <script>
+        function addCustomer() {
+            const formData = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                companyName: document.getElementById("companyName").value,
+                address: document.getElementById("address").value,
+                phoneNumber: document.getElementById("phoneNumber").value,
+            };
+    
+            fetch('/api/add-customer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            // .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                window.alert('Customer added successfully.');
+                window.location.href = '/index.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                window.alert('Customer added Failure.');
+            });
+        }
+    </script>
+
+</body>
+</html>
