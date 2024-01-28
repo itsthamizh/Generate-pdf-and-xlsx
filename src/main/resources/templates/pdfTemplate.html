@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Customer Data</title>
+        <style>
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            img.logo {
+                height: 80px;
+                margin-right: 10px;
+            }
+
+            h2 {
+                margin-right: 10px;
+            }
+
+            table {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+<!--            <img src="/resources/images/crm-logo.png" alt="Logo" class="logo"/>-->
+            <h2> Customer Details </h2>
+<!--            <img src="/resources/images/crm-logo.png" alt="Logo" class="logo"/>-->
+        </div>
+        <div>
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.firstName}"></td>
+                    <td th:text="${customer.lastName}"></td>
+                    <td th:text="${customer.companyName}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.phoneNumber}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

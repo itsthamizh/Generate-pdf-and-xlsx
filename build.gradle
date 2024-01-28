@@ -28,7 +28,10 @@ dependencies {
 	implementation group: 'org.apache.poi', name: 'poi', version: '5.2.5'
 	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
 	implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.5'
-
+	// https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-core
+	implementation group: 'org.xhtmlrenderer', name: 'flying-saucer-core', version: '9.5.1'
+	// https://mvnrepository.com/artifact/org.xhtmlrenderer/flying-saucer-pdf
+	implementation group: 'org.xhtmlrenderer', name: 'flying-saucer-pdf', version: '9.5.1'
 
 
 }
